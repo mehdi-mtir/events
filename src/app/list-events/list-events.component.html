@@ -1,0 +1,15 @@
+<h1>Liste des événements</h1>
+<input *ngIf="eventActif" type="button" class="btn btn-primary" value="Cacher les détails" (click)="cacherDetails()">
+<app-details-event *ngIf="eventActif" [event]="eventActif"></app-details-event>
+<div class="row">
+  <div *ngFor="let event of events; let indice = index" class="card col-4 m-2" style="width: 20rem;" >
+    <img src="../../assets/event.jpeg" class="card-img-top" alt="Event image">
+    <div class="card-body">
+      <h5 class="card-title">{{event.titre}}</h5>
+      <p class="card-text">Lieu : {{event.lieu}}</p>
+      <a (click)="activerEvent(event)" class="btn btn-info">Détails</a>
+      <a href="#" class="btn btn-primary">Editer</a>
+      <a href="#" class="btn btn-danger">Supprimer</a>
+    </div>
+  </div>
+</div>
